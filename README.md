@@ -104,6 +104,28 @@ Installing mod wsgi
 Configure WSGI module
 `sudo nano /etc/apache2/sites-enabled/000-default.conf`
 
+<VirtualHost *:80>
+WSGIScriptAlias / /var/www/html/myapp.wsgi
+</VirtualHost>
+
+Python Application
+`sudo nano /var/www/html/myapp.wsgi`
+```php
+def application(environ, start_response):
+    status = '200 OK'
+    output = 'Hello World!'
+
+    response_headers = [('Content-type', 'text/plain'), ('Content-Length', str(len(output)))]
+    start_response(status, response_headers)
+
+    return [output]
+```
+
 Restart Apache
 `sudo apache2ctl restart`
+
+# PostgreSQL
+
+`sudo apt-get install postgresql`
+
 
