@@ -80,15 +80,20 @@ check status
 
 Deny incoming
 `sudo ufw default deny incoming`
+
 Allow outgoing
 `sudo ufw default allow outgoing`
+
 Allow ssh
 `sudo ufw allow 2222/tcp`
+
 Allow http server
 `sudo ufw allow www`
+
 Enable firewall
 `sudo ufw enable`
 
+# Apache
 
 Installing Apache
 `sudo apt-get install apache2`
