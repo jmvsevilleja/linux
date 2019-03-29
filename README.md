@@ -98,6 +98,8 @@ Enable firewall
 Installing Apache
 `sudo apt-get install apache2`
 
+`sudo apt-get install python3 libexpat1 apache2 apache2-utils ssl-cert -y`
+
 Installing mod wsgi
 `sudo apt-get install libapache2-mod-wsgi`
 
@@ -105,11 +107,11 @@ Configure WSGI module
 `sudo nano /etc/apache2/sites-enabled/000-default.conf`
 
 <VirtualHost *:80>
-WSGIScriptAlias / /var/www/html/myapp.wsgi
+WSGIScriptAlias / /var/www/html/myapp.py
 </VirtualHost>
 
 Python Application
-`sudo nano /var/www/html/myapp.wsgi`
+`sudo nano /var/www/html/myapp.py`
 ```php
 def application(environ, start_response):
     status = '200 OK'
@@ -123,6 +125,12 @@ def application(environ, start_response):
 
 Restart Apache
 `sudo apache2ctl restart`
+
+`sudo systemctl restart apache2`
+
+Enable mod-wsgi
+`sudo a2enconf wsgi`
+
 
 # PostgreSQL
 
