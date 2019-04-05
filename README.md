@@ -101,7 +101,8 @@ Installing Apache
 `sudo apt-get install python3 libexpat1 apache2 apache2-utils ssl-cert -y`
 
 Installing mod wsgi
-`sudo apt-get install libapache2-mod-wsgi`
+`sudo apt-get install libapache2-mod-wsgi` python2
+`sudo apt-get install libapache2-mod-wsgi-py3` python3
 
 Configure WSGI module
 `sudo nano /etc/apache2/sites-enabled/000-default.conf`
