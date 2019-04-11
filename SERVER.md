@@ -33,3 +33,7 @@ Find out the process ID
 
 Kill Port
 `sudo kill -9 PID`
+
+A simple safe way would be to use an alias. Place this into ~/.bashrc or ~/.bash_aliases file:
+`alias python=python3`
+After adding the above in the file, run `source ~/.bashrc or source ~/.bash_aliases`.
